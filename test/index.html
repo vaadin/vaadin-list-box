@@ -5,14 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>vaadin-list-box tests</title>
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../web-component-tester/browser.js"></script>
   <script src="test-suites.js"></script>
 </head>
 
 <body>
   <script>
-    WCT._config.environmentScripts.push('webcomponentsjs/webcomponents-lite.js');
-
     WCT.loadSuites(
       window.VaadinListBoxSuites
         .reduce(function(suites, suite) {
