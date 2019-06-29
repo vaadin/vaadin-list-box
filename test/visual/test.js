@@ -16,7 +16,14 @@ gemini.suite('vaadin-list-box', function(rootSuite) {
   ['lumo', 'material'].forEach(theme => {
     gemini.suite(`list-box-${theme}`, function(suite) {
       suite
-        .setUrl(`list-box.html?theme=${theme}`)
+        .setUrl(`list-box-${theme}.html`)
+        .setCaptureElements('#list-box-tests')
+        .capture('list-box');
+    });
+
+    gemini.suite(`list-box-rtl-${theme}`, function(suite) {
+      suite
+        .setUrl(`rtl-${theme}.html`)
         .setCaptureElements('#list-box-tests')
         .capture('list-box');
     });
