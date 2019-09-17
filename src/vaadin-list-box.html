@@ -92,10 +92,7 @@ This program is available under Apache License Version 2.0, available at https:/
           super.ready();
           this.setAttribute('role', 'list');
 
-          this._debouncerCheckImport = Polymer.Debouncer.debounce(
-            this._debouncerCheckImport,
-            Polymer.Async.timeOut.after(2000),
-            this._checkImport.bind(this));
+          setTimeout(this._checkImport.bind(this), 2000);
         }
 
         get _scrollerElement() {
