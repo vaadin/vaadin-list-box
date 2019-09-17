@@ -22,30 +22,30 @@
 
   <script>
     describe(`import warning for vaadin-item`, () => {
+      let listbox;
+
       function isV2() {
         return window['Polymer'] && window['Polymer']['version'] && window['Polymer']['version'].indexOf('2') === 0;
       }
 
-      beforeEach(() => fixture('default'));
+      beforeEach(() => listbox = fixture('default'));
 
-      it('should warn if not imported', done => {
+      it('should warn if not imported', () => {
         sinon.stub(console, 'warn');
-        setTimeout(() => {
-          expect(console.warn.callCount).to.equal(1);
-          console.warn.restore();
-          done();
-        }, 2001);
+        // Emulate setTimeout run from ready
+        listbox._checkImport();
+        expect(console.warn.callCount).to.equal(1);
+        console.warn.restore();
       });
 
       it('should not warn for present import', (done) => {
         if (isV2()) {
           Polymer.Base.importHref(`../../vaadin-item/vaadin-item.html`, () => {
             sinon.stub(console, 'warn');
-            setTimeout(() => {
-              expect(console.warn.called).to.be.false;
-              console.warn.restore();
-              done();
-            }, 2001);
+            listbox._checkImport();
+            expect(console.warn.called).to.be.false;
+            console.warn.restore();
+            done();
           });
         } else {
           // importHref is removed in Polymer 3 stable release, skip the test.
