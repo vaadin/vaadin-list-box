@@ -26,26 +26,29 @@
     <h3>Customizing listbox item label</h3>
     <vaadin-demo-snippet>
       <template preserve-content>
+          <style>
+              img {
+                width: 21px;
+                border-radius: 50%;
+                vertical-align: bottom;
+              }
+            </style>
         <b>User</b>
         <vaadin-list-box>
           <vaadin-item value="1" selected>
-            <img style="width: 21px; border-radius: 50%; vertical-align: bottom;"
-              src="https://randomuser.me/api/portraits/women/43.jpg" />
+            <img src="https://randomuser.me/api/portraits/women/43.jpg" />
             Gabriella
           </vaadin-item>
           <vaadin-item value="2">
-            <img style="width: 21px; border-radius: 50%; vertical-align: bottom;"
-              src="https://randomuser.me/api/portraits/men/77.jpg" />
+            <img src="https://randomuser.me/api/portraits/men/77.jpg" />
             Rudi
           </vaadin-item>
           <vaadin-item value="3">
-            <img style="width: 21px; border-radius: 50%; vertical-align: bottom;"
-              src="https://randomuser.me/api/portraits/men/35.jpg" />
+            <img src="https://randomuser.me/api/portraits/men/35.jpg" />
             Hamsa
           </vaadin-item>
           <vaadin-item value="3">
-            <img style="width: 21px; border-radius: 50%; vertical-align: bottom;"
-              src="https://randomuser.me/api/portraits/men/76.jpg" />
+            <img src="https://randomuser.me/api/portraits/men/76.jpg" />
             Jacob
           </vaadin-item>
         </vaadin-list-box>

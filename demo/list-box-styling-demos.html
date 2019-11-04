@@ -1,12 +1,12 @@
 <dom-module id="list-box-styling-demos">
-    <template>
-      <style include="vaadin-component-demo-shared-styles">
-        :host {
-          display: block;
-        }
-      </style>
+  <template>
+    <style include="vaadin-component-demo-shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
 
-    <h3>Custom input field style</h3>
+    <h3>Customizing the appearance</h3>
     <vaadin-demo-snippet id="custom-list-box-border">
       <template preserve-content>
         <dom-module id="custom-list-box" theme-for="vaadin-list-box">
@@ -34,25 +34,25 @@
       </template>
     </vaadin-demo-snippet>
 
-<h3>Customizing selected icon</h3>
-<vaadin-demo-snippet id="listbox-icon">
-  <template preserve-content>
-    <dom-module id="custom-listbox-icon" theme-for="vaadin-item">
-      <template>
-        <style>
-          :host([theme~="custom"][tabindex])::before {
-            content: var(--lumo-icons-cross);
-          }
-        </style>
+    <h3>Customizing selected icon</h3>
+    <vaadin-demo-snippet id="listbox-icon">
+      <template preserve-content>
+        <dom-module id="custom-listbox-icon" theme-for="vaadin-item">
+          <template>
+            <style>
+              :host([theme~="custom"][tabindex])::before {
+                content: var(--lumo-icons-cross);
+              }
+            </style>
+          </template>
+        </dom-module>
+        <vaadin-list-box>
+          <vaadin-item theme="custom" value="1">Option one</vaadin-item>
+          <vaadin-item theme="custom" value="2">Option two</vaadin-item>
+          <vaadin-item theme="custom" value="3">Option three</vaadin-item>
+        </vaadin-list-box>
       </template>
-    </dom-module>
-    <vaadin-list-box>
-      <vaadin-item theme="custom" value="1">Option one</vaadin-item>
-      <vaadin-item theme="custom" value="2">Option two</vaadin-item>
-      <vaadin-item theme="custom" value="3">Option three</vaadin-item>
-    </vaadin-list-box>
-  </template>
-</vaadin-demo-snippet>
+    </vaadin-demo-snippet>
 
 </template>
 <script>
