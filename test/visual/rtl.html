@@ -7,8 +7,8 @@
   <script>
     const theme = window.location.search.replace(/.*theme=(\w+).*/, '$1') || 'lumo';
     document.documentElement.setAttribute('dir', 'rtl');
-    document.write(`<link rel="import" href="../../theme/${theme}/vaadin-list-box.html">`);
     document.write(`<link rel="import" href="../../../vaadin-item/theme/${theme}/vaadin-item.html">`);
+    document.write(`<link rel="import" href="../../theme/${theme}/vaadin-list-box.html">`);
   </script>
 
   <style>
