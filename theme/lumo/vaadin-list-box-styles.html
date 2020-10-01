@@ -64,7 +64,9 @@
 
       /* Easily add section dividers */
 
-      [part="items"] ::slotted(hr) {
+      [part="items"] ::slotted(hr),
+      [part="items"] ::slotted(.vaadin-list-divider) {
+        display: block;
         height: 1px;
         border: 0;
         padding: 0;
