@@ -11,16 +11,6 @@ registerStyles(
       --_lumo-item-selected-icon-display: var(--_lumo-list-box-item-selected-icon-display, block);
     }
 
-    /* IE11 flexbox issue workaround (vaadin-items are flex containers with min-height) */
-    [part='items'] {
-      display: flex;
-      flex-direction: column;
-    }
-
-    [part='items'] ::slotted(*) {
-      flex: none;
-    }
-
     /* Normal item */
     [part='items'] ::slotted(vaadin-item) {
       -webkit-tap-highlight-color: var(--lumo-primary-color-10pct);

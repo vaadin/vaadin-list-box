@@ -10,18 +10,6 @@ registerStyles(
       --_material-item-selected-icon-display: block;
     }
 
-    /* ShadyCSS workaround */
-    [part='items'] ::slotted(vaadin-item)::before {
-      display: block;
-    }
-
-    /* IE11 flexbox fix (https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items) */
-    [part='items'] {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-
     [part='items'] ::slotted(*) {
       cursor: default;
     }
