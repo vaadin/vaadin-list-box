@@ -1,8 +1,8 @@
-import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
+import { ThemableMixin } from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
-import {MultiSelectListMixin} from '@vaadin/vaadin-list-mixin/vaadin-multi-select-list-mixin.js';
+import { MultiSelectListMixin } from '@vaadin/vaadin-list-mixin/vaadin-multi-select-list-mixin.js';
 
-import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
+import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
 
 /**
  * `<vaadin-list-box>` is a Web Component for creating menus.
@@ -26,20 +26,16 @@ import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js
  *
  * See [ThemableMixin – how to apply styles for shadow parts](https://github.com/vaadin/vaadin-themable-mixin/wiki)
  */
-declare class ListBoxElement extends
-  MultiSelectListMixin(
-  ThemableMixin(
-  ElementMixin(
-  HTMLElement))) {
-  focused: Element|null;
+declare class ListBoxElement extends MultiSelectListMixin(ThemableMixin(ElementMixin(HTMLElement))) {
+  focused: Element | null;
+
   readonly _scrollerElement: HTMLElement;
 }
 
 declare global {
-
   interface HTMLElementTagNameMap {
-    "vaadin-list-box": ListBoxElement;
+    'vaadin-list-box': ListBoxElement;
   }
 }
 
-export {ListBoxElement};
+export { ListBoxElement };

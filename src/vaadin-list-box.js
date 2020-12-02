@@ -38,26 +38,26 @@ import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.
 class ListBoxElement extends ElementMixin(MultiSelectListMixin(ThemableMixin(PolymerElement))) {
   static get template() {
     return html`
-    <style>
-      :host {
-        display: flex;
-      }
+      <style>
+        :host {
+          display: flex;
+        }
 
-      :host([hidden]) {
-        display: none !important;
-      }
+        :host([hidden]) {
+          display: none !important;
+        }
 
-      [part="items"] {
-        height: 100%;
-        width: 100%;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-    <div part="items">
-      <slot></slot>
-    </div>
-`;
+        [part='items'] {
+          height: 100%;
+          width: 100%;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      </style>
+      <div part="items">
+        <slot></slot>
+      </div>
+    `;
   }
 
   static get is() {
