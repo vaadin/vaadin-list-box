@@ -36,10 +36,6 @@
   "devDependencies": {
     "iron-component-page": "^3.0.0",
     "webcomponentsjs": "^1.0.0",
-    "web-component-tester": "^6.1.5",
-    "vaadin-demo-helpers": "vaadin/vaadin-demo-helpers#^3.1.0"
-  },
-  "resolutions": {
-    "vaadin-element-mixin": "^2.0.0"
+    "web-component-tester": "^6.1.5"
   }
 }
