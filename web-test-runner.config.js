@@ -7,10 +7,10 @@ const config = {
   coverageConfig: {
     include: ['**/src/*'],
     threshold: {
-      statements: 98,
+      statements: 96,
       branches: 100,
-      functions: 87,
-      lines: 98
+      functions: 75,
+      lines: 96
     }
   }
 };
