@@ -1,7 +1,8 @@
-<link rel="import" href="../../../vaadin-material-styles/font-icons.html">
-<link rel="import" href="../../../vaadin-material-styles/color.html">
+import '@vaadin/vaadin-material-styles/font-icons.js';
+import '@vaadin/vaadin-material-styles/color.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 
-<dom-module id="material-list-box" theme-for="vaadin-list-box">
+const $_documentContainer = html`<dom-module id="material-list-box" theme-for="vaadin-list-box">
   <template>
     <style>
       :host {
@@ -64,4 +65,6 @@
       }
     </style>
   </template>
-</dom-module>
+</dom-module>`;
+
+document.head.appendChild($_documentContainer.content);
