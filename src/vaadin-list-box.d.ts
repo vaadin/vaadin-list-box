@@ -5,6 +5,31 @@ import { MultiSelectListMixin } from '@vaadin/vaadin-list-mixin/vaadin-multi-sel
 import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
 
 /**
+ * Fired when the `items` property changes.
+ */
+export type ListBoxItemsChanged = CustomEvent<{ value: Array<Element> }>;
+
+/**
+ * Fired when the `selected` property changes.
+ */
+export type  ListBoxSelectedChanged = CustomEvent<{ value: number }>;
+
+/**
+ * Fired when the `selectedValues` property changes.
+ */
+export type  ListBoxSelectedValuesChanged = CustomEvent<{ value: Array<string> }>;
+
+export interface ListBoxElementEventMap {
+  'items-changed': ListBoxItemsChanged;
+
+  'selected-changed': ListBoxSelectedChanged;
+
+  'selected-values-changed': ListBoxSelectedValuesChanged;
+}
+
+export interface ListBoxEventMap extends HTMLElementEventMap, ListBoxElementEventMap {}
+
+/**
  * `<vaadin-list-box>` is a Web Component for creating menus.
  *
  * ```
@@ -25,11 +50,27 @@ import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.
  * `items`           | The items container
  *
  * See [ThemableMixin – how to apply styles for shadow parts](https://github.com/vaadin/vaadin-themable-mixin/wiki)
+ *
+ * @fires {CustomEvent<Array<Element>>} items-changed
+ * @fires {CustomEvent<number>} selected-changed
+ * @fires {CustomEvent<Array<string>>} selected-values-changed
  */
 declare class ListBoxElement extends MultiSelectListMixin(ThemableMixin(ElementMixin(HTMLElement))) {
   focused: Element | null;
 
   readonly _scrollerElement: HTMLElement;
+
+  addEventListener<K extends keyof ListBoxEventMap>(
+    type: K,
+    listener: (this: ListBoxElement, ev: ListBoxEventMap[K]) => void,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof ListBoxEventMap>(
+    type: K,
+    listener: (this: ListBoxElement, ev: ListBoxEventMap[K]) => void,
+    options?: boolean | EventListenerOptions
+  ): void;
 }
 
 declare global {

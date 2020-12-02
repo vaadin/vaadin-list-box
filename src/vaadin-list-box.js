@@ -30,6 +30,10 @@ import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.
  *
  * See [ThemableMixin – how to apply styles for shadow parts](https://github.com/vaadin/vaadin-themable-mixin/wiki)
  *
+ * @fires {CustomEvent<Array<Element>>} items-changed
+ * @fires {CustomEvent<number>} selected-changed
+ * @fires {CustomEvent<Array<string>>} selected-values-changed
+ *
  * @extends HTMLElement
  * @mixes MultiSelectListMixin
  * @mixes ThemableMixin
