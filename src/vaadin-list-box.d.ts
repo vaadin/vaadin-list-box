@@ -1,12 +1,8 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
 import {MultiSelectListMixin} from '@vaadin/vaadin-list-mixin/vaadin-multi-select-list-mixin.js';
 
 import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
-
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 /**
  * `<vaadin-list-box>` is a Web Component for creating menus.
@@ -34,10 +30,9 @@ declare class ListBoxElement extends
   MultiSelectListMixin(
   ThemableMixin(
   ElementMixin(
-  PolymerElement))) {
+  HTMLElement))) {
   focused: Element|null;
   readonly _scrollerElement: HTMLElement;
-  ready(): void;
 }
 
 declare global {
