@@ -35,9 +35,18 @@ registerStyles(
       background-color: var(--lumo-primary-color-10pct);
     }
 
+    /* Error theme variant with red background color on hover */
+    [part='items'] ::slotted(vaadin-item([theme~='error']):hover:not([disabled])) {
+      background-color: var(--lumo-error-color-10pct);
+    }
+
     /* Focused item */
     [part='items'] ::slotted([focus-ring]:not([disabled])) {
       box-shadow: inset 0 0 0 2px var(--lumo-primary-color-50pct);
+    }
+
+    [part='items'] ::slotted([theme~='error'][focus-ring]:not([disabled])) {
+      box-shadow: inset 0 0 0 2px var(--lumo-error-color-50pct);
     }
 
     @media (pointer: coarse) {
